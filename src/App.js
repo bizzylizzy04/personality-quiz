@@ -88,7 +88,7 @@ function App() {
       num: 0,
       image: <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Manson1968.jpg/440px-Manson1968.jpg" alt="" className="photo" />,
       serialKillerInfo:
-        'You got... Charles Manson! In the late 1960s, Manson led a commune known as the Manson Family in a murder spree in the California desert. Manson believed that there would be an apocalyptic war of the races, known as Helter Skelter - the name was taken from a Beatles song. Manson was convicted of murder and conspiracy to commit murder in 1971 and was sentenced to death. His sentence was reduced to life in prison when California temporarily eliminated the death penalty in 1972. Though the death penalty has since been reinstated, Manson remains incarcerated at Corcoran State Prison.',
+      'You got... Charles Manson! In the late 1960s, Manson led a commune known as the Manson Family in a murder spree in the California desert. Manson believed that there would be an apocalyptic war of the races, known as Helter Skelter - taken from a Beatles song. Manson was convicted of murder and conspiracy to commit murder in 1971 and was sentenced to death. His sentence was reduced to life in prison when California temporarily eliminated the death penalty in 1972.',
     },
     {
       num: 1,
@@ -142,11 +142,12 @@ function App() {
         </div>
         <div className="answer__section">
           {isFinished ? (
-            <p>
-            {serialKillerOptions[mode(answers)].image}
-            <br />
-            {serialKillerOptions[mode(answers)].serialKillerInfo}
-            </p>
+            <div className="serial__killer">
+              {serialKillerOptions[mode(answers)].image}
+              <p>
+                {serialKillerOptions[mode(answers)].serialKillerInfo}
+              </p>
+            </div>
           ) : (
             questions[currentQuestion].answerOptions.map(
               (answerOption, index) => (
